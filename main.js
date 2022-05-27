@@ -5,20 +5,20 @@ let max_chars = 25;
 let uppercase;
 let lowercase;
 let splt;
-let chars;
+let pushs;
 
 const btn = document.getElementById('btn');
 const upper = document.getElementById('upper');
 const lower = document.getElementById('lower');
 const spil = document.getElementById('split');
-const char = document.getElementById('char');
+const push = document.getElementById('push');
 
 
 btn.addEventListener('click', Yaz);
 upper.addEventListener('click', Upper);
 lower.addEventListener('click',Lower);
 spil.addEventListener('click',Spil)
-char.addEventListener('click',Char)
+push.addEventListener('click',Push)
 
 function Yaz() {
   texts = document.getElementById('text').value;
@@ -81,18 +81,30 @@ function Yaz() {
     
   }
 
- function Char() {
-   chars = document.getElementsByTagName('li');
+ function Push() {
+   if (!texts) {
+
+    alert("lütfen boş bırakmayınız");
+   } else {
+
+    let data = prompt("anything");
+    pushs = document.getElementsByTagName('li');
     let chrs = "";
 
-    for (let i = 0; i < chars.length; i++) {
-      const element = chars[i];
+    for (let i = 0; i < pushs.length; i++) {
+      const element = pushs[i];
       
-      chrs += `<li>${element.innerText.charCodeAt(0)}</li>`
-     //burada kaldık
-    }
+      chrs += `<li>${element.innerText + data}</li>`
     
+    }
+   
     document.querySelector('ul').innerHTML = chrs;
+   }
+   //to be continued
+  
+    
+
+   
  }
 
 
