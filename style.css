@@ -48,3 +48,7 @@ ul li {
   margin-top: 0px;
 
 }
+.btns button{
+  border-radius: 20px;
+  box-shadow: 2px 3px #FAC213;
+}

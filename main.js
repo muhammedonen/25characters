@@ -6,12 +6,16 @@ let uppercase;
 let lowercase;
 let splt;
 let pushs;
+let clean;
+
 
 const btn = document.getElementById('btn');
 const upper = document.getElementById('upper');
 const lower = document.getElementById('lower');
 const spil = document.getElementById('split');
 const push = document.getElementById('push');
+const clear = document.getElementById('clear');
+
 
 
 btn.addEventListener('click', Yaz);
@@ -19,6 +23,8 @@ upper.addEventListener('click', Upper);
 lower.addEventListener('click',Lower);
 spil.addEventListener('click',Spil)
 push.addEventListener('click',Push)
+clear.addEventListener('click',Clear)
+
 
 function Yaz() {
   texts = document.getElementById('text').value;
@@ -35,7 +41,7 @@ function Yaz() {
     }else{
     li += `<li>${texts.charAt(0).toUpperCase() + texts.slice(1)}</li>`;
   
-  document.querySelector('ul').innerHTML = li;
+  document.querySelector('ul').innerHTML = li;//buraya bak
   document.getElementById('text').value = '';
         
     }
@@ -94,7 +100,7 @@ function Yaz() {
     for (let i = 0; i < pushs.length; i++) {
       const element = pushs[i];
       
-      chrs += `<li>${element.innerText + data}</li>`
+      chrs += `<li>${`${element.innerText}(${data})`}</li>`
     
     }
    
@@ -102,10 +108,19 @@ function Yaz() {
    }
    //to be continued
   
-    
+   
 
    
  }
 
-
+ function Clear() {
+      clean = document.getElementById('ul');
+      let cln = "";
+      for (let i = 0; i < clean.length; i++) {
+        const element = clean[i].remove();
+       
+      }
+      document.querySelector('ul').innerHTML = cln;
+      location.reload();
+}
 
